@@ -8,7 +8,7 @@ const Slot = ({ start, delay, list, item, init }) => {
     if (!start) return init ? -60 * list.indexOf(letter.toLowerCase()) : 0;
     const index = list.lastIndexOf(letter.toLowerCase());
     return -60 * (index > -1 ? index : list.length);
-  }, [start, init]);
+  }, [start, init, list]);
 
   const props = useSpring({
     from: { top: 0 },

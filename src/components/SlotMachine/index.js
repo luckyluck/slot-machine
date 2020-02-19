@@ -1,11 +1,29 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import './index.css';
 import Slot from "../Slot";
 import { isNumberOrLetter } from '../../utils/helpers';
 
-const SlotMachine = ({ start, value, list, init = false }) => {
+const SlotMachine = ({ onStart, value, list, init = false, auto = false, infinite = false }) => {
+  const [start, setStart] = useState(auto);
   let delay = -50;
+
+  const iterate = () => {
+    if (infinite) {
+      setTimeout(() => {
+        setStart(value => !value);
+        iterate();
+      }, 7000);
+    }
+  };
+
+  useEffect(() => {
+    if (onStart !== null && onStart !== undefined && !infinite) {
+      setStart(onStart);
+    }
+  }, [onStart, infinite]);
+
+  useEffect(iterate, [infinite]);
 
   return (
     <div className={'Counter'}>
@@ -19,7 +37,7 @@ const SlotMachine = ({ start, value, list, init = false }) => {
           );
         }
 
-        return <span className={'StaticElement'} key={index}>{n}</span>
+        return <span className={'StaticElement'} style={{ width: n === ' ' ? '50px' : 'auto' }} key={index}>{n}</span>
       })}
     </div>
   );

@@ -12,12 +12,12 @@ function App() {
 
   return (
     <>
-      <SlotMachine start={start} value={'Slot Machine'} list={list} />
-      <SlotMachine start={start} value={'Slot Machine'} list={list} init={true} />
-      <SlotMachine start={start} value={'Jackpot'} list={list} init={true} />
-      <SlotMachine start={start} value={'0123456789'} list={numbers} />
-      <SlotMachine start={start} value={'0123456789'} list={[...numbers, ...numbers, ...numbers]} />
-      <SlotMachine start={start} value={'$1.234,34'} list={numbers} />
+      <SlotMachine onStart={start} value={'Slot Machine'} list={list} />
+      <SlotMachine onStart={start} value={'Slot Machine'} list={list} init={true} />
+      <SlotMachine value={'Jackpot'} list={list} infinite={true} init={true} />
+      <SlotMachine value={'0123456789'} list={numbers} auto={true} />
+      <SlotMachine onStart={start} value={'0123456789'} list={[...numbers, ...numbers, ...numbers]} />
+      <SlotMachine onStart={start} value={'$1.234,34'} list={numbers} />
       <div className={'Controls'}>
         <button onClick={() => toggle(false)}>Reset</button>
         <button onClick={() => toggle(true)}>Start</button>
