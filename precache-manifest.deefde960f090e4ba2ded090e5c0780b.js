@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d199b856d06356acdcbb2aade3174884",
+    "revision": "f86c3d6c76101563dde54285da6bff22",
     "url": "/slot-machine/index.html"
   },
   {
-    "revision": "ee60010e3dae76b1ebb1",
+    "revision": "e55afb067962a17d32f7",
     "url": "/slot-machine/static/css/main.a3b6f5c7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/slot-machine/static/js/2.0eb1205c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ee60010e3dae76b1ebb1",
-    "url": "/slot-machine/static/js/main.c900a75f.chunk.js"
+    "revision": "e55afb067962a17d32f7",
+    "url": "/slot-machine/static/js/main.03c4b063.chunk.js"
   },
   {
     "revision": "644a86891a34759c5ca7",
