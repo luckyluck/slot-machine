@@ -17,6 +17,7 @@ function App() {
       <SlotMachine start={start} value={'Jackpot'} list={list} init={true} />
       <SlotMachine start={start} value={'0123456789'} list={numbers} />
       <SlotMachine start={start} value={'0123456789'} list={[...numbers, ...numbers, ...numbers]} />
+      <SlotMachine start={start} value={'$1.234,34'} list={numbers} />
       <div className={'Controls'}>
         <button onClick={() => toggle(false)}>Reset</button>
         <button onClick={() => toggle(true)}>Start</button>

@@ -7,3 +7,5 @@ export const getAlphabet = () => {
     return result;
   }, []);
 };
+
+export const isNumberOrLetter = el => new RegExp(/([a-z\d])/, 'gi').test(el);
