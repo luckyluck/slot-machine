@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/slot-machine/static/css/main.14b10f0c.chunk.css",
-    "main.js": "/slot-machine/static/js/main.24c471b9.chunk.js",
-    "main.js.map": "/slot-machine/static/js/main.24c471b9.chunk.js.map",
+    "main.css": "/slot-machine/static/css/main.1c34116d.chunk.css",
+    "main.js": "/slot-machine/static/js/main.48b13dc9.chunk.js",
+    "main.js.map": "/slot-machine/static/js/main.48b13dc9.chunk.js.map",
     "runtime-main.js": "/slot-machine/static/js/runtime-main.0bd53c6c.js",
     "runtime-main.js.map": "/slot-machine/static/js/runtime-main.0bd53c6c.js.map",
     "static/js/2.89257e27.chunk.js": "/slot-machine/static/js/2.89257e27.chunk.js",
     "static/js/2.89257e27.chunk.js.map": "/slot-machine/static/js/2.89257e27.chunk.js.map",
     "index.html": "/slot-machine/index.html",
-    "precache-manifest.0860d88fd4b99d1e045f8a3dc27f7519.js": "/slot-machine/precache-manifest.0860d88fd4b99d1e045f8a3dc27f7519.js",
+    "precache-manifest.f329f51101adb05eb6c85cfcef1f6327.js": "/slot-machine/precache-manifest.f329f51101adb05eb6c85cfcef1f6327.js",
     "service-worker.js": "/slot-machine/service-worker.js",
-    "static/css/main.14b10f0c.chunk.css.map": "/slot-machine/static/css/main.14b10f0c.chunk.css.map",
+    "static/css/main.1c34116d.chunk.css.map": "/slot-machine/static/css/main.1c34116d.chunk.css.map",
     "static/js/2.89257e27.chunk.js.LICENSE.txt": "/slot-machine/static/js/2.89257e27.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0bd53c6c.js",
     "static/js/2.89257e27.chunk.js",
-    "static/css/main.14b10f0c.chunk.css",
-    "static/js/main.24c471b9.chunk.js"
+    "static/css/main.1c34116d.chunk.css",
+    "static/js/main.48b13dc9.chunk.js"
   ]
 }
