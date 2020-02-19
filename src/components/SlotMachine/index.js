@@ -3,14 +3,7 @@ import React from "react";
 import './index.css';
 import Slot from "../Slot";
 
-const SlotMachine = ({ start, value, init = false }) => {
-  let i = 10;
-  const alphabet = [...new Array(26)].reduce(result => {
-    result.push(i.toString(36));
-    i++;
-    return result;
-  }, []);
-  const list = [...alphabet, ...alphabet, ...alphabet];
+const SlotMachine = ({ start, value, list, init = false }) => {
   let delay = -50;
 
   return (
