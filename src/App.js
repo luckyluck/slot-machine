@@ -14,7 +14,11 @@ function App() {
     <>
       <SlotMachine onStart={start} value={'Slot Machine'} list={list} />
       <SlotMachine onStart={start} value={'Slot Machine'} list={list} init={true} />
-      <SlotMachine value={'Jackpot'} list={list} infinite={true} init={true} />
+      <div className={'row'}>
+        <SlotMachine value={'Jackpot'} list={list} infinite={true} init={true} />
+        <SlotMachine value={'Jackpot'} list={list} infinite={true} init={true} />
+        <SlotMachine value={'Jackpot'} list={list} infinite={true} init={true} />
+      </div>
       <SlotMachine value={'0123456789'} list={numbers} auto={true} />
       <SlotMachine onStart={start} value={'0123456789'} list={[...numbers, ...numbers, ...numbers]} />
       <SlotMachine onStart={start} value={'$1.234,34'} list={numbers} />

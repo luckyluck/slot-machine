@@ -10,10 +10,12 @@ const SlotMachine = ({ onStart, value, list, init = false, auto = false, infinit
 
   const iterate = () => {
     if (infinite) {
+      // Something between 1s and 30s
+      const delay = Math.floor(Math.random() * 30000) + 1000;
       setTimeout(() => {
         setStart(value => !value);
         iterate();
-      }, 7000);
+      }, delay);
     }
   };
 

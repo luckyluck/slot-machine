@@ -22,3 +22,10 @@
 .Controls > button + button {
   margin-left: 15px;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
