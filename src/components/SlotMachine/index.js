@@ -4,7 +4,7 @@ import './index.css';
 import Slot from "../Slot";
 import { isNumberOrLetter } from '../../utils/helpers';
 
-const SlotMachine = ({ onStart, value, list, init = false, auto = false, infinite = false }) => {
+const SlotMachine = ({ onStart, value, list, laps, init = false, auto = false, infinite = false, slotWidth = 50, slotHeight = 60 }) => {
   const [start, setStart] = useState(auto);
   let delay = -50;
 
@@ -33,13 +33,13 @@ const SlotMachine = ({ onStart, value, list, init = false, auto = false, infinit
         if (isNumberOrLetter(n)) {
           delay += 50;
           return (
-            <div className={'ListContainer'} key={index}>
-              <Slot delay={delay} item={n} list={list} start={start} init={init}/>
+            <div className={'ListContainer'} key={index} style={{ width: `${slotWidth}px`, height: `${slotHeight}px` }}>
+              <Slot delay={delay} item={n} list={list} start={start} init={init} width={slotWidth} height={slotHeight}/>
             </div>
           );
         }
 
-        return <span className={'StaticElement'} style={{ width: n === ' ' ? '50px' : 'auto' }} key={index}>{n}</span>
+        return <span className={'StaticElement'} style={{ width: n === ' ' ? `${slotWidth}px` : 'auto', height: `${slotHeight}px` }} key={index}>{n}</span>
       })}
     </div>
   );
