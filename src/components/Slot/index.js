@@ -1,20 +1,14 @@
-import React, {useCallback} from "react";
+import React from "react";
 import { useSpring, animated } from "react-spring";
 
 import './index.css';
 
-const Slot = ({ start, delay, list, item, init, width, height }) => {
-  const getPosition = useCallback(letter => {
-    if (!start) return init ? -height * list.indexOf(letter.toLowerCase()) : 0;
-    const index = list.lastIndexOf(letter.toLowerCase());
-    return -height * (index > -1 ? index : list.length);
-  }, [start, init, list]);
-
+const Slot = ({ list, width, height, delay }) => {
   const props = useSpring({
-    from: { top: 0 },
-    to: { top: getPosition(item) },
-    config: { duration: 1500 + Math.floor(Math.random() * 1500) + 100 },
-    delay
+    from: { top: -height * (list.length - 1) },
+    to: { top: 0 },
+    config: { duration: 1000 + Math.floor(Math.random() * 1000) + 100 },
+    delay,
   });
 
   return (

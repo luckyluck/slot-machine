@@ -1,31 +1,22 @@
 import React, {useEffect, useState} from "react";
 
 import './index.css';
-import Slot from "../Slot";
-import { isNumberOrLetter } from '../../utils/helpers';
+import Slot from '../Slot';
+import {getAdjustedAlphabet, isNumberOrLetter} from '../../utils/helpers';
 
-const SlotMachine = ({ onStart, value, list, laps, init = false, auto = false, infinite = false, slotWidth = 50, slotHeight = 60 }) => {
-  const [start, setStart] = useState(auto);
+const SlotMachine = ({value, list, slotWidth = 50, slotHeight = 60, timeout = 3000}) => {
+  const [timeStamp, setTimeStamp] = useState(Date.now());
   let delay = -50;
 
-  const iterate = () => {
-    if (infinite) {
-      // Something between 1s and 30s
-      const delay = Math.floor(Math.random() * 30000) + 1000;
-      setTimeout(() => {
-        setStart(value => !value);
-        iterate();
-      }, delay);
-    }
+  const update = () => {
+    setTimeStamp(Date.now());
+
+    setTimeout(() => {
+      update();
+    }, timeout);
   };
 
-  useEffect(() => {
-    if (onStart !== null && onStart !== undefined && !infinite) {
-      setStart(onStart);
-    }
-  }, [onStart, infinite]);
-
-  useEffect(iterate, [infinite]);
+  useEffect(update, []);
 
   return (
     <div className={'Counter'}>
@@ -33,13 +24,15 @@ const SlotMachine = ({ onStart, value, list, laps, init = false, auto = false, i
         if (isNumberOrLetter(n)) {
           delay += 50;
           return (
-            <div className={'ListContainer'} key={index} style={{ width: `${slotWidth}px`, height: `${slotHeight}px` }}>
-              <Slot delay={delay} item={n} list={list} start={start} init={init} width={slotWidth} height={slotHeight}/>
+            <div className={'ListContainer'} key={index + timeStamp} style={{width: `${slotWidth}px`, height: `${slotHeight}px`}}>
+              <Slot item={n} list={getAdjustedAlphabet(list, n)} width={slotWidth} height={slotHeight} delay={delay}/>
             </div>
           );
         }
 
-        return <span className={'StaticElement'} style={{ width: n === ' ' ? `${slotWidth}px` : 'auto', height: `${slotHeight}px` }} key={index}>{n}</span>
+        return <span className={'StaticElement'}
+                     style={{width: n === ' ' ? `${slotWidth}px` : 'auto', height: `${slotHeight}px`}}
+                     key={index}>{n}</span>
       })}
     </div>
   );
